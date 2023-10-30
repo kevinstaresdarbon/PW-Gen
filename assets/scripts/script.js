@@ -93,13 +93,7 @@ var upperCasedCharacters = [
 var selectedOptions = [0, 0, 0, 0]
 var availableOptions = ["u", "l", "n", "s"]
 
-// Function to prompt user for password options
-
-
-function getPasswordOptions() {
-
-}
-
+// check to see if each option appears atleast once, if not, return true
 function complianceCheckFailed(optionsArr, arrToCheck){
 
   var hasOption = true;
@@ -111,17 +105,13 @@ function complianceCheckFailed(optionsArr, arrToCheck){
   return !hasOption;
 }
 
-// Function for getting a random number from 1 to range
+// Function for getting a random number from 0 to range
 function getRandom(range) {
 
   return Math.floor(Math.random() * range)
 }
 
-// Function to generate password with user input
-function generatePassword() {
-
-}
-
+//make the array out of the options chosen
 function generateSubArray(length, optionsArr) {
   var pwArray = []
   for (let i = 0; i < length; i++) {
@@ -129,21 +119,6 @@ function generateSubArray(length, optionsArr) {
   }
   return pwArray;
 }
-
-// Get references to the #generate element
-var generateBtn = document.querySelector('#generate');
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector('#password');
-
-  passwordText.value = password;
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener('click', writePassword);
-
 
 //Add form submission event handler
 
