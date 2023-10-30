@@ -1,34 +1,69 @@
 <!DOCTYPE html>
 <html lang="en-gb">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Password Generator</title>
-    <link rel="stylesheet" href="./assets/styles/style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Password Generator</h1>
+    </header>
+    <div class="card">
+      <div class="card-header">
+        <h2>Generate a Password</h2>
+      </div>
+      <form onsubmit="handle_generate(event)">
+        <div class="card-options">
+          <label for="pw-length">Password Length</label>
+          <input type="range" id="pw-length" name="pw-length" min="8" max="128" value="8" list="markers" oninput="this.nextElementSibling.value = this.value"/>
+          <output>8</output>
+          <datalist id="markers">
+            <option value="8">8</option>
+            <option value="32">32</option>
+            <option value="64">64</option>
+            <option value="96">96</option>
+            <option value="128">128</option>
+          </datalist>
+          <fieldset>
+            <legend> Choose the character types for your password:</legend>
+
+            <div>
+              <input type="checkbox" id="upper" name="upper" class="pw-option" />
+              <label for="upper">Upper Case</label>
+            </div>
+            <div>
+              <input type="checkbox" id="lower" name="lower" class="pw-option"/>
+              <label for="lower">Lower Case</label>
+            </div>
+            <div>
+              <input type="checkbox" id="number" name="number" class="pw-option"/>
+              <label for="number">Number</label>
+            </div>
+            <div>
+              <input type="checkbox" id="special" name="special" class="pw-option"/>
+              <label for="special">Special Symbol</label>
+            </div>
+
+
+          </fieldset>
         </div>
         <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
+          <textarea readonly id="password" placeholder="Your Secure Password"
+            aria-label="Generated Password"></textarea>
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
+          <button id="generate" class="btn" type="submit">Generate Password</button>
         </div>
-      </div>
+      </form>
     </div>
-    <script src="./assets/scripts/script.js"></script>
-  </body>
+  </div>
+  <script src="./assets/scripts/script.js"></script>
+</body>
+
 </html>
