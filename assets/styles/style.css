@@ -138,6 +138,7 @@ button[disabled] {
 
 #pw-length{
   margin: 24px;
+  width: 90%;
 }
 
 fieldset input{
