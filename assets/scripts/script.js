@@ -128,7 +128,6 @@ function handle_generate(event) {
 
   // get a nodelist of the checkboxes
   var checkboxes = document.querySelectorAll(".pw-option");
-  console.log(checkboxes);
 
   // initialise clickedBoxes to 0 for validation
   var clickedBoxes = 0;

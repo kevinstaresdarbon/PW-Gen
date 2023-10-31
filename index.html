@@ -21,6 +21,7 @@
       <form onsubmit="handle_generate(event)">
         <div class="card-options">
           <label for="pw-length">Password Length</label>
+          <!-- This input and output was adapted from stack overflow advice on displaying the slider value  --> 
           <input type="range" id="pw-length" name="pw-length" min="8" max="128" value="8" list="markers" oninput="this.nextElementSibling.value = this.value"/>
           <output>8</output>
           <datalist id="markers">
@@ -49,8 +50,6 @@
               <input type="checkbox" id="special" name="special" class="pw-option"/>
               <label for="special">Special Symbol</label>
             </div>
-
-
           </fieldset>
         </div>
         <div class="card-body">
